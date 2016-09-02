@@ -324,7 +324,7 @@ class SimpleSliderEditor(BaseRangeEditor):
     #-------------------------------------------------------------------------
 
     def _low_changed(self, low):
-        if self.value < low:
+        if self.value is not None and self.value < low:
             if self.factory.is_float:
                 self.value = float(low)
             else:
@@ -335,7 +335,7 @@ class SimpleSliderEditor(BaseRangeEditor):
             self.update_editor()
 
     def _high_changed(self, high):
-        if self.value > high:
+        if self.value is not None and self.value > high:
             if self.factory.is_float:
                 self.value = float(high)
             else:
@@ -724,7 +724,7 @@ class LargeRangeSliderEditor(BaseRangeEditor):
 
     def _low_changed(self, low):
         if self.control is not None:
-            if self.value < low:
+            if self.value is not None and self.value < low:
                 if self.factory.is_float:
                     self.value = float(low)
                 else:
@@ -734,7 +734,7 @@ class LargeRangeSliderEditor(BaseRangeEditor):
 
     def _high_changed(self, high):
         if self.control is not None:
-            if self.value > high:
+            if self.value is not None and self.value > high:
                 if self.factory.is_float:
                     self.value = float(high)
                 else:
@@ -824,7 +824,7 @@ class SimpleSpinEditor(BaseRangeEditor):
     #-------------------------------------------------------------------------
 
     def _low_changed(self, low):
-        if self.value < low:
+        if self.value is not None and self.value < low:
             if self.factory.is_float:
                 self.value = float(low)
             else:
@@ -834,7 +834,7 @@ class SimpleSpinEditor(BaseRangeEditor):
             self.control.SetValue(int(self.value))
 
     def _high_changed(self, high):
-        if self.value > high:
+        if self.value is not None and self.value > high:
             if self.factory.is_float:
                 self.value = float(high)
             else:
