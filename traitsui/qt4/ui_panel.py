@@ -1192,8 +1192,9 @@ class SplitterGroupEditor(GroupEditor):
         else:
             structure = prefs
 
-        self.splitter._initialized = True
-        self.splitter.restoreState(structure)
+        if self.splitter.restoreState(structure):
+            self.splitter._initialized = True
+
 
     def save_prefs(self):
         """ Returns any user preference information associated with the editor.
