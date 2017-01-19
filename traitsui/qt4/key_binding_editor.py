@@ -126,6 +126,7 @@ class KeyBindingEditor(Editor):
                 return
 
         self.value = key_name
+        self.update_editor()
 
     #-------------------------------------------------------------------------
     #  Handles a clear field event:
@@ -135,6 +136,7 @@ class KeyBindingEditor(Editor):
         """ Handles a clear field event.
         """
         self.value = ''
+        self.update_editor()
 
 #-------------------------------------------------------------------------
 #  'KeyBindingCtrl' class:
