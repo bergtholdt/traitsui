@@ -266,7 +266,7 @@ class Handler(HasPrivateTraits):
             if method is not None:
                 # call the action method
                 specification = getargspec(method)
-                if len(specification.args) == 1:
+                if len(specification.args) == 0:
                     method()
                 else:
                     method(info)
